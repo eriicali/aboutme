@@ -1,9 +1,642 @@
-<head>
-  <title>Erica's personal webite</title>
-</head>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Erica Li</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
 
-<body>
-    <main>
-      <p>Hello World!</p>
-  </main>
-</body>
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ecce4c0b-d6dd-49c2-b8dc-42efd48ba395" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">👩🏻‍💻</span></div><h1 class="page-title">Erica Li</h1></header><div class="page-body"><div id="ba06fc00-7f5d-4571-862f-ddec4c015a0c" class="column-list"><div id="b61e99e9-631a-44ef-850c-bd88c598da82" style="width:93.75%" class="column"><p id="35542a63-dde2-4950-aac6-38628a924dde" class="block-color-orange">ericali3@cmail.carleton.ca   |   (613) 618-7925   |   GitHub: <a href="https://github.com/eriicali">eriicali</a></p></div><div id="a77d6820-d35e-434e-821d-4213b0089c6d" style="width:6.25%" class="column"><p id="af13950e-da05-46e3-a41c-de54475fefe5" class="">
+</p></div></div><hr id="8a61677a-5544-4866-929f-ae4d64cf4b0d"/><div id="a23f0b53-9fef-4c74-9f26-760081d29a79" class="column-list"><div id="50cd76e1-5700-4ffb-89ea-a303f55f93cb" style="width:37.5%" class="column"><h3 id="d81459d9-dcab-4666-acc4-685756703e16" class="">WORK EXPERIENCE</h3><hr id="56ad2d2b-32a2-46a5-b5c0-96bd3403344b"/><h3 id="a0e285e5-6e67-4bdf-86d1-c2a0285c794d" class="">Peer Math Tutor</h3><p id="949a5a11-bbc4-4fd8-a74e-923743d1ebba" class="">Sept 2018 - Sept 2020</p><ul id="a2868d7c-aec4-4969-9776-3266dc39c5ed" class="bulleted-list"><li>Combine graphical, verbal and numerical explanations to accomodate a variety of learning styles</li></ul><ul id="8f837b7e-2849-4842-a5ac-7fa2902cb582" class="bulleted-list"><li>Adapt to Covid-19 restrictions using educational tools (i.e Zoom, Desmos)</li></ul><p id="4097423d-0895-4aad-820f-a85eae70007a" class="">
+</p></div><div id="ee8ba87c-895a-4698-9d57-9506c3186e19" style="width:62.5%" class="column"><h3 id="5e3c4458-2a49-44df-ad0e-4c9851b59c19" class="">SKILLS &amp; TECHNOLOGIES</h3><hr id="4149737c-9274-406c-80ae-3ada535242ee"/><div id="7c97aa30-666b-441d-9d52-43695b4948d1" class="column-list"><div id="d698108d-d182-4f12-85d4-5552edf67ad5" style="width:93.75%" class="column"><div id="b4f9e98c-fb0b-4df4-8bff-f2e67d5f96d8" class="column-list"><div id="44549679-2aab-4f44-9142-a15f489aad26" style="width:25%" class="column"><ul id="9a51a87e-c04d-475d-808d-12a788bad76d" class="bulleted-list"><li>Problem Solving</li></ul><ul id="f59a28a0-c5d0-4bcc-9191-f83d6b8d6647" class="bulleted-list"><li>Teamwork</li></ul><ul id="716b0723-c0fd-4ac0-a81d-c17989460fb2" class="bulleted-list"><li>Mentorship</li></ul><ul id="a8f0a362-bf28-47f2-bb5f-d5a44bc1660d" class="bulleted-list"><li>Independent learning</li></ul><p id="4242d527-6148-4c3c-b0b7-1e1a42d4906a" class="">
+</p></div><div id="06688fee-2ec4-4d0c-ba0c-cc167cc60443" style="width:70.83333333333334%" class="column"><ul id="6401ae1a-03e0-44f0-8f4c-b0b93c0a1ba8" class="bulleted-list"><li>Python</li></ul><ul id="fe916429-5dfb-4e82-b34d-be211e385f9b" class="bulleted-list"><li>Java</li></ul><ul id="ae805394-d209-436f-b431-a62c44cfd016" class="bulleted-list"><li>Javascript</li></ul><ul id="3e05d813-b713-414c-a8e2-f94bfde6b6c8" class="bulleted-list"><li>Node.js</li></ul><ul id="448c4962-d6fc-4f9a-a6ab-63192dad6f91" class="bulleted-list"><li>HTML</li></ul><ul id="adb0b7b1-271e-4bc0-bb00-7a0a0a3d4c91" class="bulleted-list"><li>CSS</li></ul><ul id="69a6867c-eb3b-4b42-beae-762721deab62" class="bulleted-list"><li>Git</li></ul><ul id="13aa6257-bf4f-4c9d-98ce-5aeb9ad0c027" class="bulleted-list"><li>Visual Basic</li></ul></div><div id="ad8d49f4-475f-412e-b2d3-612a5d0a36ec" style="width:4.166666666666674%" class="column"><p id="ae551d05-5339-43ae-8faa-92900c1cb999" class="">
+</p></div></div></div><div id="176ad59c-a6ae-4513-949f-e93de127bad6" style="width:6.25%" class="column"><div id="f2e3933c-9628-4e8e-b186-74ece53bc606" class="column-list"><div id="36dbee4e-6d57-429a-8d25-9b624f167946" style="width:37.5%" class="column"><p id="dabd32db-95fb-45ba-8aa7-7272b8941440" class="">
+</p><p id="83c446b0-aa6c-4ce4-a13d-e0c9734756bb" class="">
+</p></div><div id="776cd439-c1db-49ae-ac02-03a8a30736bf" style="width:62.5%" class="column"><p id="11d45461-6e08-4aad-a56e-25894e8af8c4" class="">
+</p><p id="6217a886-1b8b-4598-8491-cf390baea121" class="">
+</p></div></div><p id="72355c29-b122-455d-8a8d-0e528cb70d4f" class="">
+</p><p id="fdeddf88-71d5-4ad6-a0e2-d3cb915b6a50" class="">
+</p></div></div></div></div><div id="bb706b84-f988-4226-bfd6-b8f301cf04b3" class="column-list"><div id="983f7f7e-de20-493b-87dd-6dc9142d3918" style="width:37.5%" class="column"><h3 id="b1a87e01-0a37-4f1f-bf03-27024b16386c" class="">EDUCATION</h3><hr id="80ca2902-1377-469d-bdb9-5c0cdd7bb2f2"/><h3 id="5c9847e7-8e5f-439c-b9d4-73e20a909430" class="">Bachelor of Computer Science</h3><p id="10cd64e5-e8ff-4ae9-ba26-9ce970c15694" class="">Carleton University
+Sept 2020 - present</p><p id="832183e2-e188-41b8-a5ba-d0232231d9fb" class=""><strong>CGPA: </strong>11.5</p><p id="05c60ff2-5d48-48b2-9017-3cb4a9123866" class=""><strong>Relevant</strong> <strong>Coursework:</strong></p><ul id="1ab13d81-7a12-4a83-9c76-dcf991cfbe22" class="bulleted-list"><li>Fundamentals of Web Applications</li></ul><ul id="61b27472-96aa-4f21-ab3f-ac73f0fa5488" class="bulleted-list"><li>Introduction to Computer Science I &amp; II</li></ul><ul id="49f37c40-8114-4733-a65a-f21bccf71a73" class="bulleted-list"><li>Discrete Structures I &amp; II</li></ul></div><div id="02e1feba-d6b3-4fee-835e-e4958ada7d7f" style="width:62.5%" class="column"><h3 id="3ecc8989-4549-487b-9b96-efca93fe2742" class="">PROJECTS</h3><hr id="b1e831a7-ff8b-436d-8775-d7981d157687"/><p id="b6d59681-5bfc-4e49-bad8-6df9983c2221" class=""><strong>Lineup</strong> - Python, Discord.py</p><p id="fc393fc1-5a2c-4053-973a-427961949413" class=""><strong>Good Skill </strong>- Java, Swing, AWT</p><p id="657a7ddc-7bc0-4be4-bc44-3d0c09981651" class=""><strong>Connect 4 AI </strong>- Python, PyGame</p><p id="143b96af-01ca-4f3b-9199-4bf5829b03c3" class=""><strong>Cipher Machine Project </strong>- Python, Java</p><p id="4ce050ef-452f-4951-bb0c-7b78cc7e728f" class=""><strong>Space Invaders </strong>- Python, PyGame</p><p id="c0e62a8a-a5d2-4a92-9867-72af616504d2" class=""><strong>School Schedule Reminder Program </strong>- Java</p><p id="939930da-8455-4bb3-bf15-fb5fe3e7e570" class="">
+</p><p id="c98fec7d-4c98-4a6b-9dfb-fddcc1fc12cb" class="">
+</p></div></div><p id="a4527df1-07e5-4b12-8eed-f100aa6b8b1c" class="">
+</p><h3 id="db8fb9b7-7b4a-4f83-a811-c4369829034f" class="">EXTRACURRICULARS</h3><hr id="9f7f5d66-1c0e-44c3-8708-8eac8516ea8d"/><p id="c6e46df8-83eb-4e2b-81d1-e856eefefbd3" class=""><strong>Technolgap</strong> - Web Development team - Next.js, SASS</p><p id="f948a899-6e2c-4742-a11e-478083e6416a" class=""><strong>Technolgap</strong> - Social Media Content Creator</p><p id="6d3d7b1b-1437-4bab-8385-7697d39f673e" class=""><strong>uOttawa</strong> <strong>Adventures in Science and Engineering </strong>- Summer Camp Volunteer</p><p id="10ad2db8-27c3-4308-b3ea-4f8fbf0a08dd" class=""><strong>cuHacking, Technica, Advent of Code - </strong>hackathons/programming challenges</p><p id="c62d2874-ae30-41f2-bbae-7690710c4b50" class="">
+</p></div></article></body></html>
