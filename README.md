@@ -1,3 +1,3 @@
-# personal-website
+# About Me
 
-https://eriicali.github.io/personal-website/
+https://eriicali.github.io/aboutme/
