@@ -25,3 +25,7 @@ svg:hover{
 	fill: white;
 	cursor: pointer;
 }
+
+a{
+	color: #c65c73;
+}
