@@ -1,3 +1,3 @@
 # About Me
 
-https://eriicali.github.io/aboutme/
+Deployed to: https://eriicali.github.io/aboutme/
