@@ -9,7 +9,7 @@
 }
 
 .Section{
-	font-size: 25;
+	font-size: 2em;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	padding: 1em;
 	color: white;
@@ -50,6 +50,8 @@ main {
 	width: 100%;
 	height: 100%;
 	margin: 0;
+	position: absolute;
+	z-index: 0;
   }
 
 body {
@@ -63,15 +65,40 @@ body {
 	overflow:auto;
 	float:left;
 	transition: width .35s;
-	background:#546a7ba6;
-	width: 10%;
+	background:#546a7b;
+	width: 20%;
+	z-index: 1;
+	position: absolute;
 	
 }
   
 #sidebar.collapsed {
 	width: 0;
   }
-  
+
+@media only screen and (max-width: 1800px) {
+	#sidebar {
+	  width: 30%;
+	}
+  }
+
+@media only screen and (max-width: 600px) {
+	#sidebar {
+	  width: 70%;
+	}
+
+	.Section {
+		font-size: 2.5em;
+		text-align: left;
+	}
+
+  }
+
+/* #toggle {
+	
+	z-index: 2;
+} */
+
 button {
 	
 	background: #c65c73a1;
