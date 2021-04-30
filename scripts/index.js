@@ -6,14 +6,14 @@ button.addEventListener('click', _ => {
 });
 
 function home(){
-  location.href = "../public/index.html";
+  location.href = "index.html";
 }
 
 
 function hindsight(){
-  location.href = "../public/hindsightAward.html";
+  location.href = "hindsightAward.html";
 }
 
 function projects(){
-  location.href = "../public/projects.html";
+  location.href = "projects.html";
 }
