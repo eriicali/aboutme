@@ -68,7 +68,7 @@ body {
 	background:#546a7b;
 	width: 20%;
 	z-index: 1;
-	position: absolute;
+	position: fixed;
 	
 }
   
