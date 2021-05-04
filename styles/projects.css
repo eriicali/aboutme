@@ -1,4 +1,4 @@
-.grid-container {
+.Grid-Container {
     display: grid;
     grid-template-columns: auto auto;
     background-color: #0D1F2D;
@@ -6,10 +6,18 @@
     grid-gap: 10em;
   }
   
-  .grid-item {
+  .Grid-Item {
     background-color: white;
     border: 0.5em solid #A17887;
     padding: 1em;
     font-size: 30px;
     text-align: center;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .Grid-Container {
+      grid-template-columns: auto;
+      padding: 2em;
+      grid-gap: 5em;
+    }
   }
