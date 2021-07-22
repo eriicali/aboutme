@@ -9,11 +9,14 @@ function home(){
   location.href = "index.html";
 }
 
-
 function hindsight(){
   location.href = "hindsightAward.html";
 }
 
 function projects(){
   location.href = "projects.html";
+}
+
+function resume(){
+  location.href = "resume.pdf";
 }
