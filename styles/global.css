@@ -79,8 +79,15 @@ body {
 }
 
 @media only screen and (max-width: 1800px) {
+	.Title {
+		font-size: 80;
+	}
 	#sidebar {
 	  width: 30%;
+	}
+	.Section {
+		font-size: 1.5em;
+		
 	}
 }
 
@@ -92,7 +99,10 @@ body {
 		margin: 0.5em;
 	}
 	.Title{
-		font-size: 60;
+		font-size: 50;
+	}
+	.Section {
+		font-size: 1em;
 	}
 }
 
