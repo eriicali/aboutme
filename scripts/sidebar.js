@@ -20,3 +20,7 @@ function projects(){
 function resume(){
   location.href = "resume.pdf";
 }
+
+function contact(){
+  location.href = "contact.html";
+}
